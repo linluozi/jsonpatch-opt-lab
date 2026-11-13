@@ -66,7 +66,7 @@ the combined saving (exact numbers in `benchmark/summary.json`).
 
 The 1200 differential cases are de-duplicated by
 `sha256(json.dumps(src, sort_keys=True) + "\x00" + json.dumps(dst, sort_keys=True))`;
-2614 generated pairs collapsed to 1200 independent ones. Inputs: 15 hand-written
+2614 generated pairs collapsed to 1200 independent ones. Inputs: 14 hand-written
 edge cases (empty, scalar, `true` vs `1`, `1` vs `1.0`, `-0.0`, non-ASCII keys,
 NUL bytes, 4 KiB strings, 10^40 integers, 50-element arrays) + seeded random
 JSON + structural mutations of real Botocore documents. Comparison is
