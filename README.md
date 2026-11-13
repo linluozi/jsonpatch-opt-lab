@@ -117,7 +117,8 @@ reproduce on another machine.
 
 ## Environment
 
-- CPU: see `benchmark/baseline.json` (`environment.cpu`), 4 cores, 3.7 GB RAM.
+- CPU: AMD EPYC 7K62 (4 vCPU), 3,723 MB RAM, AMD-V guest; full data in
+  `benchmark/baseline.json` (`environment.cpu`).
 - Runtime: CPython 3.12.3, Linux.
 - Timer: `time.perf_counter()`; 3 warmups + 5 samples per scale; raw samples in
   `benchmark/raw/`. Relative standard deviation: 0.6–8.5 %; the largest scale
