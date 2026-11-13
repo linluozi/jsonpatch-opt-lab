@@ -16,7 +16,7 @@ changed.
 ## Result on real documents
 
 `from_diff` between real AWS Botocore `service-2.json` model revisions
-(10 files, 8.9 MB total; all timed with `time.perf_counter`, 3 warmups then 5
+(10 files, 8.43 MB total; all timed with `time.perf_counter`, 3 warmups then 5
 samples, median shown).
 
 | pair (class) | src → dst bytes | ops | baseline median | optimized median | speedup |
@@ -99,7 +99,7 @@ BASELINE_JSONPATCH=/tmp/upstream-jsonpatch/jsonpatch.py OPT_JSONPATCH=/tmp/optim
 ```
 
 The corpus is the Botocore data that ships with `python3-botocore`
-(`/usr/lib/python3/dist-packages/botocore/data`, 10 files, 8.9 MB). Paths are
+(`/usr/lib/python3/dist-packages/botocore/data`, 10 files, 8.43 MB). Paths are
 listed at the top of `benchmark/bench.py`; install `python3-botocore` to
 reproduce on another machine.
 
