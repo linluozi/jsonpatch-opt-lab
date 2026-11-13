@@ -27,8 +27,14 @@ samples, median shown).
 | object-heavy (rds 2014-09-01 → 2014-10-31) | 326,067 → 1,087,567 | 2,412 | 69.91 ms | 52.53 ms | **1.331×** |
 | near-identical (ec2 2015-10-01 → 2016-04-01) | 847,080 → 878,250 | 274 | 30.38 ms | 29.71 ms | **1.023×** |
 
-- Scale median (small/medium/large): **1.388×**.
-- Real-corpus median over the 5 pairs / 10 files: **1.331×**.
+- Scale median (small/medium/large): **1.388×** in the committed run.
+  **Repeatability:** four independent full bench runs (two of them by an
+  independent verifier process) give scale medians 1.341×, 1.366×, 1.373×,
+  1.388× and large-pair speedups 1.341–1.403×. The timings are bimodal
+  (~0.185 s vs ~0.208 s clusters on the 3 MB pair), so read **1.34–1.40×** as
+  the honest range, not the single best run.
+- Real-corpus median over the 5 pairs / 10 files: **1.331×** (repeat runs:
+  1.330×, 1.339×, 1.343×, 1.347×).
 - Real-corpus minimum: **1.023×** — the honest negative result. When two large
   documents are nearly identical the patch has only 274 operations and there is
   almost nothing to copy or serialize, so the optimization has no headroom.
@@ -59,9 +65,9 @@ the combined saving (exact numbers in `benchmark/summary.json`).
 | --- | --- | --- |
 | G1 upstream tests green | `346 passed, 448 subtests passed` after the patch | `cd /tmp/optimized-jsonpatch && PYTHONPATH=. /path/to/venv/bin/python -m pytest tests.py -q` |
 | G2 byte-identical diff | **1200 independent samples, 0 mismatches**, 1200/1200 also re-applied to `dst` | `BASELINE_JSONPATCH=... OPT_JSONPATCH=... python -m pytest tests -q -s` |
-| G3 scale median ≥1.15× | **1.388×** | `python benchmark/summarize.py` |
-| G3b real corpus ≥1.15× | **1.331×** median over 10 real files | same |
-| G4 largest scale ≥0.95× | **1.388×** | same |
+| G3 scale median ≥1.15× | **1.388×** committed run; 1.341–1.403× over 4 full runs, every run ≥1.15× | `python benchmark/summarize.py` |
+| G3b real corpus ≥1.15× | **1.331×** median over 10 real files (1.330–1.347× over 4 runs) | same |
+| G4 largest scale ≥0.95× | **1.388×** committed run; 1.341–1.403× over 4 full runs | same |
 | G5 peak RSS ≤1.10× | 32,236 kB vs 31,968 kB = **1.008×** (`/usr/bin/time -v`) | `benchmark/baseline.json`, `benchmark/optimized.json` |
 
 The 1200 differential cases are de-duplicated by
