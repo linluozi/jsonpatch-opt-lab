@@ -1,0 +1,11 @@
+{
+ "class": "added-subtrees",
+ "dst_bytes": 3027300,
+ "ops": 5770,
+ "patch_sha256": "3ad2404081de3ca179ffba1f060785fd738d4d82151a0167a62a0569d8c5db30",
+ "rss_peak_kb": 48908,
+ "sample": 0,
+ "scale": "large",
+ "seconds": 0.1618724074214697,
+ "src_bytes": 891280
+}

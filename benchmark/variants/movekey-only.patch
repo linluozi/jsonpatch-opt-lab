@@ -1,0 +1,23 @@
+--- a/jsonpatch.py
++++ b/jsonpatch.py
+@@ -1184,6 +1184,8 @@
+     def __init__(self, src_doc, dst_doc, dumps=json.dumps, pointer_cls=JsonPointer,
+                  optimization=True, generate_test_ops=False):
+         self.dumps = dumps
++        self._canonical_dumps = (json.JSONEncoder(sort_keys=True).encode
++                                 if dumps is json.dumps else None)
+         self.pointer_cls = pointer_cls
+         self.optimization = optimization
+         self.generate_test_ops = generate_test_ops
+@@ -1201,6 +1203,11 @@
+     def _move_key(self, value):
+         """ A key of value, which is equal for values that are equal in JSON,
+         so that e.g. [1] is not moved where [true] is added """
++        if self._canonical_dumps is not None:
++            try:
++                return self._canonical_dumps(value)
++            except (TypeError, ValueError, RecursionError):
++                return id(value)
+         try:
+             # Serialized like in _differing_runs
+             return self.dumps(_sorted_members(value))

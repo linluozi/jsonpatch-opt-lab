@@ -1,0 +1,11 @@
+{
+ "class": "object-heavy",
+ "dst_bytes": 1087567,
+ "ops": 2412,
+ "patch_sha256": "c47a3762ac189751dd6e02b514da8ab19e0c3329ded8894b4ca68d4b6d697208",
+ "rss_peak_kb": 53388,
+ "sample": 3,
+ "scale": "rds-objects",
+ "seconds": 0.06263595726341009,
+ "src_bytes": 326067
+}

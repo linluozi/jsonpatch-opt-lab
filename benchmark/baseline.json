@@ -1,0 +1,133 @@
+{
+  "environment": {
+    "command": "/tmp/jp/.venv/bin/python benchmark/bench.py --lib /tmp/jp --impl baseline --out benchmark/baseline.json",
+    "cpu": "AMD EPYC 7K62 48-Core Processor",
+    "mem_total_kb": 3812564,
+    "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "repeats": 5,
+    "seed": null,
+    "seed_note": "inputs are fixed real files; no RNG",
+    "timer": "time.perf_counter",
+    "warmup": 3
+  },
+  "impl": "baseline",
+  "lib": "/tmp/jp",
+  "scales": {
+    "ec2-near-identical": {
+      "class": "near-identical",
+      "dst": "/usr/lib/python3/dist-packages/botocore/data/ec2/2016-04-01/service-2.json",
+      "dst_bytes": 878250,
+      "max_s": 0.031195612624287605,
+      "median_s": 0.030384779907763004,
+      "min_s": 0.029942307621240616,
+      "ops": 274,
+      "p25_s": 0.030235107988119125,
+      "p75_s": 0.030834926292300224,
+      "patch_sha256": "dd037b0e2793e5fb5436809e0973d42dfa56d93973843de96be222d452d95906",
+      "rsd": 0.014635664292294506,
+      "rss_peak_kb": 52976,
+      "samples": [
+        0.029942307621240616,
+        0.030384779907763004,
+        0.030834926292300224,
+        0.030235107988119125,
+        0.031195612624287605
+      ],
+      "src": "/usr/lib/python3/dist-packages/botocore/data/ec2/2015-10-01/service-2.json",
+      "src_bytes": 847080
+    },
+    "large": {
+      "class": "added-subtrees",
+      "dst": "/usr/lib/python3/dist-packages/botocore/data/ec2/2016-11-15/service-2.json",
+      "dst_bytes": 3027300,
+      "max_s": 0.20353938732296228,
+      "median_s": 0.18588948622345924,
+      "min_s": 0.1833669561892748,
+      "ops": 5770,
+      "p25_s": 0.1846933700144291,
+      "p75_s": 0.20022522751241922,
+      "patch_sha256": "3ad2404081de3ca179ffba1f060785fd738d4d82151a0167a62a0569d8c5db30",
+      "rsd": 0.04596418110109232,
+      "rss_peak_kb": 52976,
+      "samples": [
+        0.18588948622345924,
+        0.20353938732296228,
+        0.1846933700144291,
+        0.20022522751241922,
+        0.1833669561892748
+      ],
+      "src": "/usr/lib/python3/dist-packages/botocore/data/ec2/2016-09-15/service-2.json",
+      "src_bytes": 891280
+    },
+    "medium": {
+      "class": "wide-arrays",
+      "dst": "/usr/lib/python3/dist-packages/botocore/data/cloudfront/2020-05-31/service-2.json",
+      "dst_bytes": 588264,
+      "max_s": 0.042186313308775425,
+      "median_s": 0.039728895761072636,
+      "min_s": 0.0395558699965477,
+      "ops": 1172,
+      "p25_s": 0.03957133833318949,
+      "p75_s": 0.0400755163282156,
+      "patch_sha256": "d54eb15314411f449b8ae239e312fe33981bb2355abff2f48aa793b57dd3eac8",
+      "rsd": 0.025145950431826634,
+      "rss_peak_kb": 28876,
+      "samples": [
+        0.0395558699965477,
+        0.042186313308775425,
+        0.03957133833318949,
+        0.0400755163282156,
+        0.039728895761072636
+      ],
+      "src": "/usr/lib/python3/dist-packages/botocore/data/cloudfront/2015-09-17/service-2.json",
+      "src_bytes": 130784
+    },
+    "rds-objects": {
+      "class": "object-heavy",
+      "dst": "/usr/lib/python3/dist-packages/botocore/data/rds/2014-10-31/service-2.json",
+      "dst_bytes": 1087567,
+      "max_s": 0.07953730877488852,
+      "median_s": 0.06991003081202507,
+      "min_s": 0.06855945289134979,
+      "ops": 2412,
+      "p25_s": 0.06935191247612238,
+      "p75_s": 0.07033040188252926,
+      "patch_sha256": "c47a3762ac189751dd6e02b514da8ab19e0c3329ded8894b4ca68d4b6d697208",
+      "rsd": 0.057838191873721606,
+      "rss_peak_kb": 52976,
+      "samples": [
+        0.06855945289134979,
+        0.06935191247612238,
+        0.07953730877488852,
+        0.07033040188252926,
+        0.06991003081202507
+      ],
+      "src": "/usr/lib/python3/dist-packages/botocore/data/rds/2014-09-01/service-2.json",
+      "src_bytes": 326067
+    },
+    "small": {
+      "class": "small-objects",
+      "dst": "/usr/lib/python3/dist-packages/botocore/data/elasticache/2015-02-02/service-2.json",
+      "dst_bytes": 427240,
+      "max_s": 0.03716075699776411,
+      "median_s": 0.03654888737946749,
+      "min_s": 0.03647551033645868,
+      "ops": 1360,
+      "p25_s": 0.03653786703944206,
+      "p75_s": 0.03693894110620022,
+      "patch_sha256": "0303b1d9b71159f3cb1d24a8d2c41febec824694e82f3dcffbb297291b425de9",
+      "rsd": 0.007378860852306425,
+      "rss_peak_kb": 27532,
+      "samples": [
+        0.03653786703944206,
+        0.03716075699776411,
+        0.03654888737946749,
+        0.03693894110620022,
+        0.03647551033645868
+      ],
+      "src": "/usr/lib/python3/dist-packages/botocore/data/elasticache/2014-09-30/service-2.json",
+      "src_bytes": 223047
+    }
+  }
+}

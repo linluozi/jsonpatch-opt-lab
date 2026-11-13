@@ -1,0 +1,11 @@
+{
+ "class": "wide-arrays",
+ "dst_bytes": 588264,
+ "ops": 1172,
+ "patch_sha256": "d54eb15314411f449b8ae239e312fe33981bb2355abff2f48aa793b57dd3eac8",
+ "rss_peak_kb": 28348,
+ "sample": 0,
+ "scale": "medium",
+ "seconds": 0.030833994038403034,
+ "src_bytes": 130784
+}

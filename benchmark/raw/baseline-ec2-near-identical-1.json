@@ -1,0 +1,11 @@
+{
+ "class": "near-identical",
+ "dst_bytes": 878250,
+ "ops": 274,
+ "patch_sha256": "dd037b0e2793e5fb5436809e0973d42dfa56d93973843de96be222d452d95906",
+ "rss_peak_kb": 52976,
+ "sample": 1,
+ "scale": "ec2-near-identical",
+ "seconds": 0.030384779907763004,
+ "src_bytes": 847080
+}
